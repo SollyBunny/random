@@ -1,5 +1,6 @@
 # random
-Matrix terminal screen saver made in C  
+A simple utility to pick a number from 0 to n
+(Also see [choice](https://github.com/SollyBunny/choice))
 
 ## Compiling
 Run `make`
@@ -9,7 +10,4 @@ Run `make install` to install
 Run `make uninstall` to uninstall
 
 ## Usage
-Run `choice`
-
-## Problems
-Only supports `253` arguments
+Run `random`

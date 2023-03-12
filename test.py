@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
-import subprocess
-
-size = 6
-out = [0] * size
-
-for i in range(1000):
-    out[int(subprocess.check_output(["./random", str(size)]))] += 1
-
-for i in range(size):
-    print("%s: %s" % (i, out[i]))
+import subprocess 
+a = 0
+b = 10
+n = 1000
+out = {}
+for i in range(min(a, b), max(a, b) + 1):
+    out[i] = 0
+for i in range(n):
+    m = subprocess.call(["./random", str(a), str(b)], stdout=subprocess.DEVNULL)
+    out[m] += 1
+print(out)
+print(sum(out.values()) / abs(a - b))
+    

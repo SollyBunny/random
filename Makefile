@@ -1,6 +1,13 @@
-main.o:
-	gcc main.c -o random -s -g3
+NAME=random
+SOURCE=main.c
+CFLAGS=-O4 -s
+
+build:
+	cc $(SOURCE) -o $(NAME) $(CFLAGS)
 
 install:
-	-rm "/usr/local/bin/random"
-	ln -s "`pwd`/random" "/usr/local/bin/random"
+	rm -f "/usr/local/bin/$(NAME)"
+	ln -s "`pwd`/$(NAME)" "/usr/local/bin/$(NAME)"
+
+uninstall:
+	rm -f "/usr/local/bin/$(NAME)"
